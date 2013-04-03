@@ -1,9 +1,16 @@
 var greg = greg || {};
 
+// var pouet = $.ajax({
+// 		type:"GET",url:'js/templates/project.htm',async:false
+// 	}).responseText;
+
+
+// alert(pouet);
+
 greg.projectView = Backbone.View.extend({
 	tagName : 'section',
 	className: 'project',
-	template: _.template('templates/project.htm'),
+	template: _.template($.ajax({type:"GET",url:'js/templates/project.htm',async:false}).responseText),
 
 	events: {
 		'click .project-nav-next' : 'loadNextProject'
