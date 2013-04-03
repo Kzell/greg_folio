@@ -1,34 +1,17 @@
 var greg = greg || {};
 
 greg.projectView = Backbone.View.extend({
-	tagName : 'section',
+	tagName : 'li',
 	className: 'project',
 	template: _.template($.ajax({type:"GET",url:'js/templates/project.htm',async:false}).responseText),
 
-	// events: {
-	// 	'click .project-nav-next' : 'loadNextProject'
-	// },
-
 	initialize : function(){
-		_.bindAll(this, 'render', 'loadNextProject');
-
-		this.collection = new greg.Collection();
-		this.collection.bind('add',this.appendProject)
-
 		this.listenTo(this.model, "change", this.render);
 	},
 
 	render : function(){
 		this.$el.html(this.template(this.model.toJSON()));
     	return this.$el;
-	},
-
-	loadNextProject: function(){
-		this.$el.append(this.template(this.model.toJSON()));
-		return this;
-	},
-
-	loadProjectDetails: function(){
-
 	}
+
 });

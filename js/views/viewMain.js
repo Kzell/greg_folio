@@ -3,6 +3,7 @@ var greg = greg || {};
 greg.mainView = Backbone.View.extend({
 	el:$('section'),
 	className: 'project',
+
 	// template: _.template($.ajax({type:"GET",url:'js/templates/project.htm',async:false}).responseText),
 
 	// events: {
@@ -19,6 +20,9 @@ greg.mainView = Backbone.View.extend({
 		this.collection.bind('add',this.appendProject)
 
 		this.listenTo(this.model, "change", this.render);
+		this.addProject({
+			title:'Glouglou'
+		});
 	},
 
 	render : function(){
@@ -26,9 +30,17 @@ greg.mainView = Backbone.View.extend({
 		$(this.el).append($('<ul>').attr('id','projects'));
 	},
 
-	appendProject: function(item){
-		var itemView = new greg.projectView({
-			
-		});
+
+	addProject: function(project){
+		var project = new greg.projectModel();
+		project.set();
+		this.collection.add(project);
 	},
+
+	appendProject: function(item){
+		var projectView = new greg.projectView({
+			model:myModel
+		});
+		$('ul', this.el).append(projectView.render().el);
+	}
 });
