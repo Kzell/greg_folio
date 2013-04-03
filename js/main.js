@@ -1,3 +1,6 @@
 var greg = greg || {};
 
-var model = new greg.projectModel();
+var collection = new greg.Collection();
+collection.add({ title : 'Test'});
+
+console.log(collection.length);
