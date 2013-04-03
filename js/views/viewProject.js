@@ -3,7 +3,7 @@ var greg = greg || {};
 greg.projectView = Backbone.View.extend({
 	tagName : 'section',
 	className: 'project',
-	template: _.template('tmeplates/project.htm'),
+	template: _.template('templates/project.htm'),
 
 	events: {
 		'click .project-nav-next' : 'loadNextProject'
@@ -16,7 +16,7 @@ greg.projectView = Backbone.View.extend({
 
 	render : function(){
 		this.$el.html(this.template(this.model.toJSON()));
-    	return this;
+    	return this.$el;
 	},
 
 	loadNextProject: function(){
