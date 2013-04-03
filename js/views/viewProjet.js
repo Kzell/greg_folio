@@ -11,5 +11,13 @@ var greg.projectView = Backbone.View.extend({
 	render : function(){
 		this.$el.html(this.template(this.model.toJSON()));
     	return this;
+	},
+
+	events : function(){
+		'click' : 'open'
+	}
+
+	open : function(){
+		console.log('ok');
 	}
 });
