@@ -5,6 +5,7 @@ greg.projectModel = Backbone.Model.extend({
 		title : 'Title project',
 		subTitle : 'Hetic',
 		role : 'WebDesigneur',
+		type : 'Freelance',
 		description : 'ceci est un super projet',
 		sumup : 'short description',
 		pictures : [],
@@ -13,6 +14,6 @@ greg.projectModel = Backbone.Model.extend({
 	},
 
 	initialize : function(){
-		this.view = new greg.projectView({ model : this });
+		this.viewProject = new greg.projectView({ model : this });
 	}
 });

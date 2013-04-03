@@ -1,7 +1,7 @@
 var greg = greg || {};
 
-var theProjectModel = new greg.projectModel();
 
-// var pouet = new greg.projectView({
-// 	model:theProjectModel
-// });
+var collection = new greg.Collection();
+collection.add({ title : 'Test'});
+
+console.log(collection.length);
