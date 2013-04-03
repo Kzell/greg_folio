@@ -1,2 +1,2 @@
-greg = greg || {};
+var greg = greg || {};
 
