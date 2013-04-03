@@ -11,9 +11,5 @@ greg.projectModel = Backbone.Model.extend({
 		pictures : [],
 		technologies : [],
 		link : 'http://'
-	},
-
-	initialize : function(){
-		this.viewProject = new greg.projectView({ model : this });
 	}
 });
