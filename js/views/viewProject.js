@@ -1,12 +1,5 @@
 var greg = greg || {};
 
-// var pouet = $.ajax({
-// 		type:"GET",url:'js/templates/project.htm',async:false
-// 	}).responseText;
-
-
-// alert(pouet);
-
 greg.projectView = Backbone.View.extend({
 	tagName : 'section',
 	className: 'project',
@@ -17,11 +10,11 @@ greg.projectView = Backbone.View.extend({
 	},
 
 	initialize : function(){
+
+		var collection = new greg.Collection();
+
 		_.bindAll(this, 'render', 'loadNextProject');
 		this.listenTo(this.model, "change", this.render);
-
-
-		// ajoute le #1 projet
 	},
 
 	render : function(){
