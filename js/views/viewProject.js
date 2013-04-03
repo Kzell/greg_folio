@@ -11,7 +11,8 @@ greg.projectView = Backbone.View.extend({
 
 	initialize : function(){
 
-		var collection = new greg.Collection();
+		this.collection = new greg.Collection();
+		// this.collection
 
 		_.bindAll(this, 'render', 'loadNextProject');
 		this.listenTo(this.model, "change", this.render);
