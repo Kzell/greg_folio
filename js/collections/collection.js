@@ -7,7 +7,8 @@ greg.Collection = Backbone.Collection.extend({
   		this.on('add',this.render,this);
   	},
   	render : function(){
-  		model = new greg.projectModel();
-  		$('#projects').append(model.viewProject.render);
+  		console.log(this);
+  		// model = new greg.projectModel();
+  		$('#projects').append(this.models[0].viewProject.render);
   	}
 });

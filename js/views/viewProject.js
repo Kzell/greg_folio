@@ -19,6 +19,9 @@ greg.projectView = Backbone.View.extend({
 	initialize : function(){
 		_.bindAll(this, 'render', 'loadNextProject');
 		this.listenTo(this.model, "change", this.render);
+
+
+		// ajoute le #1 projet
 	},
 
 	render : function(){
