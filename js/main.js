@@ -1,3 +1,7 @@
 var greg = greg || {};
 
-var model = new greg.projectModel();
+var theProjectModel = new greg.projectModel();
+
+// var pouet = new greg.projectView({
+// 	model:theProjectModel
+// });
