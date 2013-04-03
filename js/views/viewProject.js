@@ -10,8 +10,8 @@ greg.projectView = Backbone.View.extend({
 	},
 
 	render : function(){
-		this.$el.html(this.template(this.model.toJSON()));
-    	return this.$el;
+		$(this.el).html(this.template(this.model.toJSON()));
+    	return this;
 	}
 
 });
