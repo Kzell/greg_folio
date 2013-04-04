@@ -23,6 +23,5 @@ greg.mainView = Backbone.View.extend({
 		var projectView = new greg.projectView({ model:project });
 		
 		$(this.el).append(projectView.render().el);
-
 	}
 });
