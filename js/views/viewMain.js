@@ -4,24 +4,22 @@ greg.mainView = Backbone.View.extend({
 	el : $('ul#projects'),
 
 	initialize : function(){
+		_.bindAll(this, 'render', 'addProject');
 
 		this.collection = new greg.Collection();
+		this.collection.bind('add', this.appendProject);
 
-		this.addProject({
-			title : 'Glouglou',
-			subTitle : 'héhéhé'
-		});
+		
 	},
 
 	addProject: function(projectJSON){
 		var project = new greg.projectModel();
-
 		project.set(projectJSON);
-
 		this.collection.add(project);
+	},
 
-		var projectView = new greg.projectView({ model:project });
-		
-		$(this.el).append(projectView.render().el);
+	appendProject: function(theProject){
+		var projectView = new greg.projectView({ model:theProject });
+		$('ul#projects').append(projectView.render('showroom').el);
 	}
 });
