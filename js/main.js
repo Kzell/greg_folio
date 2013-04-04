@@ -7,7 +7,4 @@ var myModel = new greg.projectModel();
 
 var test = new greg.mainView();
 
-test.addProject({
-			title : 'Glouglou',
-			subTitle : 'héhéhé'
-		});
+test.addProject('koom');
