@@ -2,12 +2,36 @@ var greg = greg || {};
 
 greg.router = Backbone.Router.extend({
 	routes: {
-	    "koom" : "koom"
+		"" : "index",
+	    "projects/:id" : "project"
 	},
 
-	koom : function(){
-		
+	initialize: function () {
+		var mainView = new greg.mainView();
+		mainView.addProject('koom');
+		router = this;
+
+		Backbone.history.start({pushState:true});
+
+		$('body').delegate('a:not(.external)','click',function(e){
+			e.preventDefault();
+			url = encodeURI(decodeURI($(this).attr('href').replace(/^http\:\/\/([^\/]+)/, ""))).toLowerCase();
+			router.navigate(url,true,true);
+		});
+
+		//Init routing -> Home
+		currentUrl = document.URL;
+		router.navigate(currentUrl,true,true);
+		//router.index();
+	},
+
+	index : function(){
+		console.log('index');
+		//Init affichage à la home
+		$('#details-wrapper').html('');
+	},
+
+	project : function(id){
+		console.log('project', id);
 	}
 });
-
-Backbone.history.start();

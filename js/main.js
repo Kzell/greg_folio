@@ -3,8 +3,4 @@ function wait(time, statement){setTimeout(function(){statement()},time);}
 
 var greg = greg || {};
 
-var myModel = new greg.projectModel();
-
-var test = new greg.mainView();
-
-test.addProject('koom');
+var router = new greg.router();
