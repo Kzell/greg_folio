@@ -19,10 +19,7 @@ greg.router = Backbone.Router.extend({
 			router.navigate(url,true,true);
 		});
 
-		//Init routing -> Home
-		currentUrl = document.URL;
-		router.navigate(currentUrl,true,true);
-		//router.index();
+		console.log(document.URL);
 	},
 
 	index : function(){
